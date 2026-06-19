@@ -1,5 +1,40 @@
-# infyntrek-fraud-detection
-### Transactional Fraud Detection Analysis   Project Overview: > Analyzed historical financial transactions to identify patterns and characteristics of fraudulent activity, helping flag suspicious activities in real-time.  Tools Used: > * Python (Pandas, NumPy, Seaborn, Scikit-learn) * SQL * Tableau / Power BI   Key Steps Completed: > * Week 1: Cleaned the data and checked the balance between fraud and legitimate cases.
-* Week 2: Created visual charts (histograms, box plots) to find top indicators of fraud.
-* Week 3: Built a classification model to catch fraud and evaluated it using Precision and Recall.
-* Week 4: Built an interactive dashboard and compiled the final report
+# **# Transactional Fraud Detection Analysis**
+
+
+
+## \## Project Overview
+
+Financial fraud is a multi-billion dollar problem that erodes customer trust and causes significant losses for companies.The challenge of this project is to distinguish fraudulent transactions from legitimate ones, which are often hidden within millions of daily transactions. This analysis involves processing historical financial records to identify patterns of fraud and build a baseline predictive model to flag suspicious activities in real-time.
+
+
+
+## \## Tech Stack
+
+\* Database: MySQL (Data Extraction \& Profiling)
+
+\* Core Language: Python (Jupiter Notebook)
+
+\* Libraries : Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn 
+
+\* Reporting: Power BI / Tableau 
+
+
+
+
+
+## \## Development Phases \& Milestones
+
+
+
+#### 1: Data Preparation and Initial Exploration
+
+In this phase, the primary focus was establishing the database environment, successfully extracting the transaction history, and conducting initial data profiling.
+
+
+
+1\. Database Setup \& Data Loading
+
+A local schema was initialized, and the historical dataset containing 284,807 transactions was imported into a structured table with the help of the import wizard.
+
+
+
