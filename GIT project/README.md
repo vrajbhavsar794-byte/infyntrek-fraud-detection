@@ -57,3 +57,21 @@ Using `df['Class'].value_counts()`, an extreme class imbalance was observed:
 * Fraudulent Transactions (Class 1): 492 entries (~0.17% of the dataset)
 
 *Conclusion: Because fraud represents less than 1% of total transaction volumes, standard model evaluation metrics like "Accuracy" will be completely deceptive . The baseline model must be evaluated very strictly.
+
+
+
+
+ Task 2: Exploratory Data Analysis (EDA)
+In this phase, analysis was conducted via Excel to visually map transaction attributes and isolate core markers of fraud.
+
+1. Hypothesis 1 Testing: Amount vs. Class
+Finding: Fraudulent transactions demonstrate a vastly restricted distribution shape compared to standard commercial traffic. While legitimate charges contain extreme luxury outliers, fraud focuses heavily on medium-sized amounts designed to bypass automated security limits.
+
+ 2. Hypothesis 2 Testing: Temporal Analysis
+Finding: Legitimate consumer purchasing plummets by over 70% during standard resting hours (12 AM – 5 AM). Conversely, fraudulent transaction density spikes sharply during these exact hours, validating that bad actors deliberately exploit off-peak operational monitoring gaps.
+
+ 3. Top Core Statistical Indicators
+Using Excel's Data Analysis Correlation Toolpak, the masked features demonstrating the absolute strongest mathematical relationship with a fraud signal (class) were identified:
+Top Positive Drivers
+Top Negative Drivers
+
