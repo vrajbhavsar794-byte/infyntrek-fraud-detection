@@ -75,3 +75,32 @@ Using Excel's Data Analysis Correlation Toolpak, the masked features demonstrati
 Top Positive Drivers
 Top Negative Drivers
 
+
+
+📊 Task 3: Feature Engineering & Baseline Modeling (Week 3 Summary) 
+In this phase, the project shifted from exploratory analysis to preparing data for machine learning, establishing a robust baseline classifier, and handling severe class imbalance
+
+🛠️  Implementation 
+
+1.Feature Engineering: - Applied a log transformation (`Log_Amount = ln(Amount + 1)`) to the transaction amounts. This normalized the heavily right-skewed feature distribution and stabilized variance across standard operations. 
+
+2. Stratified Train-Test Split: - Isolated predictors from the target variable (`Class`) Conducted a 70/30 stratified split using `train_test_split(stratify=y). Stratification ensures both training and testing datasets contain the exact same minority-to-majority class ratio, preventing evaluation bias. 
+
+3. Feature Scaling:- Used `Standard Scaler` to normalize features to a uniform scale (mean = 0, variance = 1). This optimization step is critical to prevent features with naturally larger ranges from dominating the Logistic Regression algorithm. 
+
+4. Handling Severe Class Imbalance: - Standard classifiers optimize for overall accuracy, which fails on fraud datasets. To address this, the model was trained using `class_weight='balanced'. This mathematically penalizes misclassifications of the minority (fraud) class much more heavily during training. 
+
+5. Baseline Model Training - Implemented a standardized Logistic Regression classifier to establish a baseline performance benchmark.
+
+
+--- ### 📈 Model Evaluation Metrics Because accuracy is misleading for fraud detection, high-value financial evaluation metrics were leveraged:
+ | Metric | Score | Analytical Interpretation ROC-AUC-0.9416 | Indicates exceptional predictive power and class separation capability across all decision thresholds. 
+| | Recall (Class 1 - Fraud) - 0.91 | Primary Success Metric: The baseline model successfully caught 91% of all actual fraudulent transactions, significantly minimizing potential financial exposure
+ | | Precision (Class 1 - Fraud) - 0.06 | Out of all transactions flagged as suspicious by the model, 6% were true positives. While this introduces false positives, it is an expected operational trade-off to ensure a high catch rate in baseline systems.
+ | | F1-Score (Class 1 - Fraud) -0.11** | The harmonic mean balancing precision and recall under extreme class imbalance constraints. |
+
+
+ ---## 🔍 Top Key Risk Indicators By extracting the baseline model's internal feature coefficients, the variables that provide the strongest statistical signal for flagging fraudulent behavior were identified
+1. Feature `V4`(Coefficient: `1.1578`) – The most powerful positive indicator of fraud in the dataset. Higher values in this component strongly escalate the transaction risk profile. 
+2. Feature `V11`(Coefficient: `0.7937`) – Acted as a secondary positive driver of suspicious transaction markers. 
+3. Feature `V14`(Coefficient: `-1.7135`) & `V12`(Coefficient: `-1.2185`) – Showed strong negative correlation coefficients, meaning significant drops in these specific values are highly descriptive of fraudulent activities.
